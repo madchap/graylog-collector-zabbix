@@ -100,7 +100,6 @@ def graylog_get_collectors(session_id, session, config):
                 collector = {"{#CLNAME}":"{}".format(nodeid), "{#CSTATUS}":"{}".format(nodestatus)}
             
             lld_dict['data'].append(collector.copy())
-            
 
     return lld_dict
 
