@@ -3,6 +3,11 @@ Zabbix template to monitor the state of Graylog's registered sidecar collectors.
 
 It uses Zabbix Low Level Discovery (LLD) to identify the collectors through Graylog's API.
 
+## Tested on
+* Zabbix 3.2.6
+* Graylog 2.2.3
+* Python 2.7.x (take a look at the `import` statements for the list of needed modules)
+
 ## Installation
 ### External Script
 * Copy the .py and .conf in your Zabbix ExternalScript directory.
