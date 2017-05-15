@@ -10,7 +10,9 @@ import ConfigParser
 import logging
 import os
 import base64
-
+# make sure warning do not come pollute the JSON output zabbix is expecting -- i.e in case of SSL warnings
+import warnings
+warnings.filterwarnings('ignore')
 
 def setup_default_logger():
     global logger
