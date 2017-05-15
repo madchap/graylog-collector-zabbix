@@ -34,4 +34,5 @@ You can link it to the Zabbix server itself if you wish, or anywhere for that ma
 Let the discovery rules a little time.
 
 ### Notes
+#### Return codes
 Return codes taken from source code backends/registry.go, except for code 99, which indicates an inactive collector, which status is still set to "Running" or 0. Hopefully, the time to catch that before it dissapears.

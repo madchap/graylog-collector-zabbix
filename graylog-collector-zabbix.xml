@@ -35,7 +35,7 @@
                     <type>10</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>check_graylog_collector.py</key>
+                    <key>check_graylog_collector.py['2>/dev/null']</key>
                     <delay>30</delay>
                     <status>0</status>
                     <allowed_hosts/>
