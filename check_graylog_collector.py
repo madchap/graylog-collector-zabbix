@@ -57,7 +57,8 @@ def graylog_session_login(config):
     session.headers.update({'Accept': 'application/json'})
     r = session.post(
         config.get('graylog', 'gl_api') + config.get('graylog', 'gl_sessions_endpoint'),
-        json=login_payload
+        json=login_payload,
+        verify={'True': True, 'False': False}.get(config.get('ssl', 'ssl_verify'))
     )
 
     log_response_info(r)
@@ -69,7 +70,8 @@ def graylog_session_login(config):
 def graylog_session_logout(session_id, session, config):
     r = session.delete(
         config.get('graylog', 'gl_api') + config.get('graylog', 'gl_sessions_endpoint') + "/" + session_id,
-        auth=HTTPBasicAuth(session_id, 'session')
+        auth=HTTPBasicAuth(session_id, 'session'),
+        verify={'True': True, 'False': False}.get(config.get('ssl', 'ssl_verify'))
     )
     log_response_info(r)
 
@@ -77,7 +79,8 @@ def graylog_session_logout(session_id, session, config):
 def graylog_get_collectors(session_id, session, config):
     r = session.get(
         config.get('graylog', 'gl_api') + config.get('graylog', 'gl_collectors_endpoint'),
-        auth=HTTPBasicAuth(session_id, 'session')
+        auth=HTTPBasicAuth(session_id, 'session'),
+        verify={'True': True, 'False': False}.get(config.get('ssl', 'ssl_verify'))
     )
     log_response_info(r)
 
